@@ -20,10 +20,10 @@ const Button = (props)=>{
 function App () {
 
   return (
-  <>
+  <React.StrictMode>
   <Header/>
   <ErrorBoundaryMainSection/>
-  </>
+  </React.StrictMode>
   );
 }
 
