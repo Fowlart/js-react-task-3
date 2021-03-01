@@ -1,0 +1,59 @@
+.FlexMain {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: black;
+  color: white;
+  font-size: 24px;
+}
+
+.HeaderLink {
+  color: red;
+  background-color: black;
+  transition: all 0.5s;
+  padding: 30px;
+  text-align: center;
+}
+
+.HeaderLink:hover {
+  color: darkred;
+}
+
+.HeaderFlex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.InputStyle {
+  font-size: large;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.InputHimself {
+  margin: 5px;
+  height: 70px;
+}
+
+.ButtonStyle {
+  width: 20%;
+  height: 90%;
+  background-color: red;
+  color: white;
+  transition: all 0.5s;
+}
+
+.ButtonStyle:hover {
+  background-color: darkred;
+}
+
+.DivStyle {
+  background: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  height: 60px;
+}

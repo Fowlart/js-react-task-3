@@ -1,0 +1,66 @@
+.MainSectionFlex{
+    background-color: #232323;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Card{
+    color: #ffffff;
+    border: solid 2px gray;
+    width: 270px;
+    height: 400px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.CardMainSection{
+    height: 80%;
+}
+
+.OopsDiv{
+    background-color: black;
+    color: red;
+    text-align: center;
+    height: 90%;
+}
+
+
+
+.CardNameRelease{
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ReleaseSpan{
+    padding: 8px;
+    border: solid  #555555 2px;
+}
+
+.FilmNameSpan{
+    font-size: x-large;
+}
+
+.FilterContainer{
+    background-color: #232323;
+    font-size: large;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.FilterSection{
+    align-self: center;
+    margin: 10px;
+    transition: all ease;
+}
+
+.FilterSection:hover{
+    color: gray;
+}
