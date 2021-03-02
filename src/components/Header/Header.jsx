@@ -1,37 +1,35 @@
 import React, { useState } from "react";
-import './Header.css';
-import logo from './1.png';
+import styled from "styled-components";
+import logo from "./1.png";
+import FlexMain from "./FlexMain.styled";
+import InputStyle from "./InputStyle.styled";
+import HeaderFlex from "./HeaderFlex.styled";
+import HeaderLink from "./HeaderLink.styled";
+import InputWraper from "./InputWraper.styled";
+import Input from "./Input.styled";
+import Button from "./Button.styled";
 
 const Header = (props) => {
-
   let inputPlaceHolder;
   let setplaceHolder;
- 
- [inputPlaceHolder,setplaceHolder] = useState("What do You want to watch");
 
+  [inputPlaceHolder, setplaceHolder] = useState("What do You want to watch");
 
-  function handleClick() {
-    setplaceHolder("ZEN!");
-  }
 
   return (
-    <div className="FlexMain">
-      <div className="HeaderFlex">
+    <FlexMain>
+      <HeaderFlex>
         <img src={logo}></img>
-        <div className="HeaderLink">ADD MOVIE</div>
-      </div>
-      <div className="DivStyle">
-        <div className="InputStyle">
+        <HeaderLink>ADD MOVIE</HeaderLink>
+      </HeaderFlex>
+      <InputWraper>
+        <InputStyle>
           <span>FIND YOUR FILM</span>
-        <input className="InputHimself"
-          type="text"
-          placeholder={inputPlaceHolder}
-          required=""
-        ></input>
-        </div>
-        <input className="ButtonStyle" type="submit" value="SEARCH"/>
-      </div>
-    </div>
+          <Input type="text" placeholder={inputPlaceHolder}></Input>
+        </InputStyle>
+        <Button type="submit" value="SEARCH" />
+      </InputWraper>
+    </FlexMain>
   );
 };
 

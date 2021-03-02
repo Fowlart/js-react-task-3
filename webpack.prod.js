@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     resolve: {
@@ -20,15 +21,10 @@ module.exports = {
             chunks: 'all'
         }
     },
-    plugins: [new HtmlWebpackPlugin({
-        title: 'Production',
-        templateContent: `
-        <html>
-          <body>
-            <div id=target></div>
-          </body>
-        </html>
-      `
+    plugins: [
+        new CleanWebpackPlugin(), 
+        new HtmlWebpackPlugin({
+        template: path.resolve(__dirname,"index.html")
     })],
     devServer: {
         contentBase: path.join(__dirname, "dist"),
@@ -39,7 +35,7 @@ module.exports = {
         rules: [
             // Each is an object with tree main properties:
             {
-                test: /\.js$/, // file type to accept
+                test: /\.jsx$/, // file type to accept
                 exclude: /(node_modules)/, // stay away
                 use: { // loader from node_modules
                     loader: 'babel-loader',

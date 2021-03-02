@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const svgToMiniDataURI = require('mini-svg-data-uri');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
     resolve: {
         extensions: ['.jsx', '.js']
@@ -19,14 +20,10 @@ module.exports = {
             chunks: 'all'
         }
     },
-    plugins: [new HtmlWebpackPlugin({
-        templateContent: `
-        <html>
-          <body>
-            <div id=target></div>
-          </body>
-        </html>
-      `
+    plugins: [
+        new CleanWebpackPlugin(), 
+        new HtmlWebpackPlugin({
+        template: path.resolve(__dirname,"index.html")
     })],
     devtool: 'inline-source-map',
     devServer: {
