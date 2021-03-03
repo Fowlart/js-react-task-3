@@ -1,22 +1,38 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import "./MainSection.css";
+
+const FilterContainer = ({ className, children }) => {
+  return <div className={className}>{children}</div>;
+};
+
+// apply styles above existing ones
+const StyledResultsFilter = styled(FilterContainer)`
+  border: solid 2px gold;
+  font-weight: bold;
+  color: green;
+`;
 
 const ResultsFilter = (props) => {
   let sections;
   let setSections;
   [sections, setSections] = useState(props.sections);
+
+  let renderedSections = sections.map((section) => (
+    <span className="FilterSection" key={section}>
+      {section}
+    </span>
+  ));
+
   return (
-    <div className="FilterContainer">
-      {sections.map((section) => (
-        <span className="FilterSection" key={section}>
-          {section}
-        </span>
-      ))}
-    </div>
+    <StyledResultsFilter
+      className="FilterContainer"
+      children={renderedSections}
+    />
   );
 };
 
-const Card = (props) => {
+const Card = (props, className) => {
   let name;
   let setName;
 
@@ -31,13 +47,15 @@ const Card = (props) => {
   [jenre, setJenre] = useState(props.jenre);
 
   return (
-    <div className="Card">
-      <div className="CardMainSection"></div>
-      <div className="CardNameRelease">
-        <span className="FilmNameSpan">{name}</span>
-        <span className="ReleaseSpan">{release}</span>
+    <div className={className}>
+      <div className="Card">
+        <div className="CardMainSection"></div>
+        <div className="CardNameRelease">
+          <span className="FilmNameSpan">{name}</span>
+          <span className="ReleaseSpan">{release}</span>
+        </div>
+        <div className="CardJenre">{jenre}</div>
       </div>
-      <div className="CardJenre">{jenre}</div>
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import logo from "./1.png";
 import FlexMain from "./FlexMain.styled";
 import InputStyle from "./InputStyle.styled";
@@ -15,6 +14,14 @@ const Header = (props) => {
 
   [inputPlaceHolder, setplaceHolder] = useState("What do You want to watch");
 
+  // passing standard and custom props into simple element
+  let input = (
+    <Input
+      type="text"
+      placeholder={inputPlaceHolder}
+      inputColor="black"
+    ></Input>
+  );
 
   return (
     <FlexMain>
@@ -25,7 +32,7 @@ const Header = (props) => {
       <InputWraper>
         <InputStyle>
           <span>FIND YOUR FILM</span>
-          <Input type="text" placeholder={inputPlaceHolder}></Input>
+          {input}
         </InputStyle>
         <Button type="submit" value="SEARCH" />
       </InputWraper>

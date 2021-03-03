@@ -7,8 +7,8 @@
 }
 
 .Card{
+    border: solid 2px #ffffff;
     color: #ffffff;
-    border: solid 2px gray;
     width: 270px;
     height: 400px;
     margin: 15px;
